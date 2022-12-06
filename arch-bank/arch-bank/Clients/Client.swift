@@ -7,16 +7,16 @@
 
 import Foundation
 
-final class Client{
-    private var clientData: [String: String]
-    private var clientId: Int
-    private var isDependable: Bool
+final class Client: Hashable{
+    var clientId: Int
+    var clientData: [String: String]
+    var isDependable: Bool
     
-    var account: AccountSchema
+    var account: AccountSchema?
     
-    init(clientData: [String:String], clientId: Int) {
-        self.clientData = clientData
+    init(clientId: Int, clientData: [String:String]) {
         self.clientId = clientId
+        self.clientData = clientData
         
         if (clientData["address"] != nil) || (clientData["passportNumber"] != nil){
             self.isDependable = true
@@ -25,9 +25,19 @@ final class Client{
             self.isDependable = false
         }
     }
-    
+    func addAccount(account: AccountSchema){
+        self.account = account
+    }
     func gertId() -> Int{
         return clientId
+    }
+    
+    static func == (lhs: Client, rhs: Client) -> Bool {
+        lhs.clientId == rhs.clientId
+    }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(clientId)
     }
     
 }
@@ -41,14 +51,14 @@ protocol ClientCreation{
 }
 
 final class ClientCreator: ClientCreation{
-    private var clientData: [String:String] = [:]
     private var clientId: Int = -1
+    private var clientData: [String:String] = [:]
     
     func build() throws -> Client {
         if (clientData["fisrtName"] == nil) || (clientData["secondName"] == nil) || (clientId == -1){
             throw ClientCreationExceptions.missingData
         }else{
-            let newClient = Client(clientData: self.clientData, clientId: self.clientId)
+            let newClient = Client(clientId: self.clientId, clientData: self.clientData)
             //resetFields()
             return newClient
             
@@ -66,22 +76,22 @@ final class ClientCreator: ClientCreation{
     }
     
     func setId(clientId: Int) -> ClientCreation {
-        self.clientData["clientId"] = String(clientId)
+        self.clientId = clientId
         return self
     }
     
     func setAddress(address: String?) -> ClientCreation {
         if let address = address {
             self.clientData["address"] = address
-            return self
         }
+        return self
     }
     
     func setPassport(passportNumber: String?) -> ClientCreation {
         if let passportNumber = passportNumber{
             self.clientData["passportNumber"] = passportNumber
-            return self
         }
+        return self
     }
     
 }

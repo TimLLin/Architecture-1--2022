@@ -11,6 +11,13 @@
 		CAAB5F4C293F0DDB00186EE7 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAAB5F4B293F0DDB00186EE7 /* Client.swift */; };
 		CAAB5F4E293F175400186EE7 /* Client-Exception.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAAB5F4D293F175400186EE7 /* Client-Exception.swift */; };
 		CAAB5F50293F1A9D00186EE7 /* Account-Schema.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAAB5F4F293F1A9D00186EE7 /* Account-Schema.swift */; };
+		CAAB5F53293F20D800186EE7 /* Debit-Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAAB5F52293F20D800186EE7 /* Debit-Account.swift */; };
+		CAAB5F55293F220600186EE7 /* Account Exception.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAAB5F54293F220600186EE7 /* Account Exception.swift */; };
+		CAAB5F57293F26BC00186EE7 /* Deposit-Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAAB5F56293F26BC00186EE7 /* Deposit-Account.swift */; };
+		CAAB5F59293F2ABB00186EE7 /* Credit-Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAAB5F58293F2ABB00186EE7 /* Credit-Account.swift */; };
+		CAAB5F5C293F2D3700186EE7 /* Bank-Schema.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAAB5F5B293F2D3700186EE7 /* Bank-Schema.swift */; };
+		CAAB5F5E293F3CEA00186EE7 /* BankEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAAB5F5D293F3CEA00186EE7 /* BankEx.swift */; };
+		CAAB5F60293F5DAD00186EE7 /* Bank-Exception.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAAB5F5F293F5DAD00186EE7 /* Bank-Exception.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -31,6 +38,13 @@
 		CAAB5F4B293F0DDB00186EE7 /* Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
 		CAAB5F4D293F175400186EE7 /* Client-Exception.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Client-Exception.swift"; sourceTree = "<group>"; };
 		CAAB5F4F293F1A9D00186EE7 /* Account-Schema.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Account-Schema.swift"; sourceTree = "<group>"; };
+		CAAB5F52293F20D800186EE7 /* Debit-Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Debit-Account.swift"; sourceTree = "<group>"; };
+		CAAB5F54293F220600186EE7 /* Account Exception.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Account Exception.swift"; sourceTree = "<group>"; };
+		CAAB5F56293F26BC00186EE7 /* Deposit-Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Deposit-Account.swift"; sourceTree = "<group>"; };
+		CAAB5F58293F2ABB00186EE7 /* Credit-Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Credit-Account.swift"; sourceTree = "<group>"; };
+		CAAB5F5B293F2D3700186EE7 /* Bank-Schema.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bank-Schema.swift"; sourceTree = "<group>"; };
+		CAAB5F5D293F3CEA00186EE7 /* BankEx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankEx.swift; sourceTree = "<group>"; };
+		CAAB5F5F293F5DAD00186EE7 /* Bank-Exception.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bank-Exception.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,8 +77,11 @@
 		CAAB5F43293F0DC900186EE7 /* arch-bank */ = {
 			isa = PBXGroup;
 			children = (
+				CAAB5F5B293F2D3700186EE7 /* Bank-Schema.swift */,
+				CAAB5F5D293F3CEA00186EE7 /* BankEx.swift */,
+				CAAB5F5F293F5DAD00186EE7 /* Bank-Exception.swift */,
 				CAAB5F44293F0DC900186EE7 /* main.swift */,
-				CAAB5F4F293F1A9D00186EE7 /* Account-Schema.swift */,
+				CAAB5F5A293F2D1300186EE7 /* Accounts */,
 				CAAB5F51293F1C6D00186EE7 /* Clients */,
 			);
 			path = "arch-bank";
@@ -77,6 +94,18 @@
 				CAAB5F4D293F175400186EE7 /* Client-Exception.swift */,
 			);
 			path = Clients;
+			sourceTree = "<group>";
+		};
+		CAAB5F5A293F2D1300186EE7 /* Accounts */ = {
+			isa = PBXGroup;
+			children = (
+				CAAB5F4F293F1A9D00186EE7 /* Account-Schema.swift */,
+				CAAB5F52293F20D800186EE7 /* Debit-Account.swift */,
+				CAAB5F56293F26BC00186EE7 /* Deposit-Account.swift */,
+				CAAB5F58293F2ABB00186EE7 /* Credit-Account.swift */,
+				CAAB5F54293F220600186EE7 /* Account Exception.swift */,
+			);
+			path = Accounts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,9 +166,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CAAB5F53293F20D800186EE7 /* Debit-Account.swift in Sources */,
 				CAAB5F4C293F0DDB00186EE7 /* Client.swift in Sources */,
 				CAAB5F4E293F175400186EE7 /* Client-Exception.swift in Sources */,
 				CAAB5F50293F1A9D00186EE7 /* Account-Schema.swift in Sources */,
+				CAAB5F5C293F2D3700186EE7 /* Bank-Schema.swift in Sources */,
+				CAAB5F59293F2ABB00186EE7 /* Credit-Account.swift in Sources */,
+				CAAB5F55293F220600186EE7 /* Account Exception.swift in Sources */,
+				CAAB5F60293F5DAD00186EE7 /* Bank-Exception.swift in Sources */,
+				CAAB5F57293F26BC00186EE7 /* Deposit-Account.swift in Sources */,
+				CAAB5F5E293F3CEA00186EE7 /* BankEx.swift in Sources */,
 				CAAB5F45293F0DC900186EE7 /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
