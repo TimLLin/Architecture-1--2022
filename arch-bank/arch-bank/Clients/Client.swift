@@ -28,10 +28,7 @@ final class Client: Hashable{
     func addAccount(account: AccountSchema){
         self.account = account
     }
-    func gertId() -> Int{
-        return clientId
-    }
-    
+    //hashable part
     static func == (lhs: Client, rhs: Client) -> Bool {
         lhs.clientId == rhs.clientId
     }
@@ -59,7 +56,6 @@ final class ClientCreator: ClientCreation{
             throw ClientCreationExceptions.missingData
         }else{
             let newClient = Client(clientId: self.clientId, clientData: self.clientData)
-            //resetFields()
             return newClient
             
         }
@@ -93,5 +89,4 @@ final class ClientCreator: ClientCreation{
         }
         return self
     }
-    
 }
