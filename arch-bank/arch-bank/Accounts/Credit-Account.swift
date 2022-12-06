@@ -7,8 +7,7 @@
 
 import Foundation
 
-class CreditAccount: AccountSchema{
-    var id: String
+final class CreditAccount: AccountSchema{
     var balance: Double
     var date: Int
     var isDependable: Bool
@@ -18,7 +17,6 @@ class CreditAccount: AccountSchema{
     var downLimit: Double
     
     init(isDependable: Bool, isDependableLimit: Double, commission: Double, downLimit: Double) {
-        self.id = UUID().uuidString
         self.balance = 0
         self.date = 0
         self.isDependable = isDependable
@@ -65,8 +63,14 @@ class CreditAccount: AccountSchema{
         }
     }
     
-    func timeTravel() {
-        print(1)
+    func timeTravel(timeTravelPeriod: Int) -> Double{
+        var timeTravelBalance = self.balance
+        var timeTravelDate = self.date
+        while timeTravelDate != timeTravelPeriod{
+            timeTravelBalance -= self.commission
+            timeTravelDate += 1
+        }
+        return timeTravelBalance
     }
     
     

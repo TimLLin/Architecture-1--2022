@@ -16,7 +16,7 @@
 		CAAB5F57293F26BC00186EE7 /* Deposit-Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAAB5F56293F26BC00186EE7 /* Deposit-Account.swift */; };
 		CAAB5F59293F2ABB00186EE7 /* Credit-Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAAB5F58293F2ABB00186EE7 /* Credit-Account.swift */; };
 		CAAB5F5C293F2D3700186EE7 /* Bank-Schema.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAAB5F5B293F2D3700186EE7 /* Bank-Schema.swift */; };
-		CAAB5F5E293F3CEA00186EE7 /* BankEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAAB5F5D293F3CEA00186EE7 /* BankEx.swift */; };
+		CAAB5F5E293F3CEA00186EE7 /* Bank-Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAAB5F5D293F3CEA00186EE7 /* Bank-Model.swift */; };
 		CAAB5F60293F5DAD00186EE7 /* Bank-Exception.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAAB5F5F293F5DAD00186EE7 /* Bank-Exception.swift */; };
 /* End PBXBuildFile section */
 
@@ -43,7 +43,7 @@
 		CAAB5F56293F26BC00186EE7 /* Deposit-Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Deposit-Account.swift"; sourceTree = "<group>"; };
 		CAAB5F58293F2ABB00186EE7 /* Credit-Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Credit-Account.swift"; sourceTree = "<group>"; };
 		CAAB5F5B293F2D3700186EE7 /* Bank-Schema.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bank-Schema.swift"; sourceTree = "<group>"; };
-		CAAB5F5D293F3CEA00186EE7 /* BankEx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankEx.swift; sourceTree = "<group>"; };
+		CAAB5F5D293F3CEA00186EE7 /* Bank-Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bank-Model.swift"; sourceTree = "<group>"; };
 		CAAB5F5F293F5DAD00186EE7 /* Bank-Exception.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bank-Exception.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -77,10 +77,8 @@
 		CAAB5F43293F0DC900186EE7 /* arch-bank */ = {
 			isa = PBXGroup;
 			children = (
-				CAAB5F5B293F2D3700186EE7 /* Bank-Schema.swift */,
-				CAAB5F5D293F3CEA00186EE7 /* BankEx.swift */,
-				CAAB5F5F293F5DAD00186EE7 /* Bank-Exception.swift */,
 				CAAB5F44293F0DC900186EE7 /* main.swift */,
+				CAAB5F61293FBA5700186EE7 /* Bank */,
 				CAAB5F5A293F2D1300186EE7 /* Accounts */,
 				CAAB5F51293F1C6D00186EE7 /* Clients */,
 			);
@@ -106,6 +104,16 @@
 				CAAB5F54293F220600186EE7 /* Account Exception.swift */,
 			);
 			path = Accounts;
+			sourceTree = "<group>";
+		};
+		CAAB5F61293FBA5700186EE7 /* Bank */ = {
+			isa = PBXGroup;
+			children = (
+				CAAB5F5F293F5DAD00186EE7 /* Bank-Exception.swift */,
+				CAAB5F5B293F2D3700186EE7 /* Bank-Schema.swift */,
+				CAAB5F5D293F3CEA00186EE7 /* Bank-Model.swift */,
+			);
+			path = Bank;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -175,7 +183,7 @@
 				CAAB5F55293F220600186EE7 /* Account Exception.swift in Sources */,
 				CAAB5F60293F5DAD00186EE7 /* Bank-Exception.swift in Sources */,
 				CAAB5F57293F26BC00186EE7 /* Deposit-Account.swift in Sources */,
-				CAAB5F5E293F3CEA00186EE7 /* BankEx.swift in Sources */,
+				CAAB5F5E293F3CEA00186EE7 /* Bank-Model.swift in Sources */,
 				CAAB5F45293F0DC900186EE7 /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

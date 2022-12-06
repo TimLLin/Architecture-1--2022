@@ -8,7 +8,6 @@
 import Foundation
 
 protocol AccountSchema{
-    var id: String {get set}
     var balance: Double { get set }
     var date: Int { get set }
     var isDependable: Bool { get set }
@@ -21,5 +20,5 @@ protocol AccountSchema{
     func topUp(money: Double)
     func withdrawMoney(money: Double) throws
     func transferMoney(money: Double, accountToTransfer: inout AccountSchema) throws
-    func timeTravel()
+    func timeTravel(timeTravelPeriod: Int) -> Double
 }

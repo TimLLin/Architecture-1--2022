@@ -8,7 +8,6 @@
 import Foundation
 
 final class DebitAccount: AccountSchema{
-    var id: String
     var balance: Double
     var date: Int
     var isDependable: Bool
@@ -20,7 +19,7 @@ final class DebitAccount: AccountSchema{
     
     
     init(isDependable: Bool, percentOnbalance: Double, isDependableLimit: Double) {
-        self.id = UUID().uuidString
+        
         self.balance = 0
         self.date = 0
         self.isDependable = isDependable
@@ -67,7 +66,13 @@ final class DebitAccount: AccountSchema{
         }
     }
     
-    func timeTravel() {
-        print(1)
+    func timeTravel(timeTravelPeriod: Int) -> Double {
+        var timeTravelBalance = self.balance
+        var timeTravelDate = self.date
+        while timeTravelDate != timeTravelPeriod{
+            timeTravelBalance += self.percentOnbalance/365 * timeTravelBalance
+            timeTravelDate += 1
+        }
+        return timeTravelBalance
     }
 }
